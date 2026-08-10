@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Clientes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Sistema de Clientes</h1>
+
+    <p>Nome:</p>
+    <input type="text" id="nome">
+
+    <p>E-mail:</p>
+    <input type="text" id="email">
+
+    <p>Telefone:</p>
+    <input type="text" id="telefone">
+
+    <br><br>
+
+    <button id="botao">Cadastrar</button>
+
+    <p>Pesquisar cliente:</p>
+    <input type="text" id="pesquisa" placeholder="Digite o nome do cliente">
+
+    <p id="mensagemPesquisa"></p>
+
+    <h2>Clientes cadastrados (<span id="contador">0</span>)</h2>
+
+    <div id="listaClientes"></div>
+
+</div>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>

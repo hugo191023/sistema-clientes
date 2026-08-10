@@ -1,0 +1,145 @@
+
+
+const nome = document.getElementById("nome");
+const email = document.getElementById("email");
+const telefone = document.getElementById("telefone");
+const botao = document.getElementById("botao");
+const listaClientes = document.getElementById("listaClientes");
+const pesquisa = document.getElementById("pesquisa");
+const contador = document.getElementById("contador");
+const mensagemPesquisa = document.getElementById("mensagemPesquisa");
+
+let clientes = JSON.parse(localStorage.getItem("clientes")) || [];
+
+let indiceEditando = null;
+
+function mostrarClientes() {
+
+    listaClientes.innerHTML = "";
+
+    contador.textContent = clientes.length;
+
+    clientes.forEach(function(cliente, indice) {
+
+        listaClientes.innerHTML +=
+            '<div class="cliente-card">' +
+                '<p><strong>Nome:</strong> ' + cliente.nome + '</p>' +
+                '<p><strong>E-mail:</strong> ' + cliente.email + '</p>' +
+                '<p><strong>Telefone:</strong> ' + cliente.telefone + '</p>' +
+                '<div class="acoes">' +
+                    '<button onclick="editarCliente(' + indice + ')">Editar</button>' +
+                    '<button onclick="excluirCliente(' + indice + ')">Excluir</button>' +
+                '</div>' +
+            '</div>';
+
+    });
+}
+
+function editarCliente(indice) {
+
+    nome.value = clientes[indice].nome;
+    email.value = clientes[indice].email;
+    telefone.value = clientes[indice].telefone;
+
+    indiceEditando = indice;
+
+    botao.textContent = "Salvar alteração";
+
+}
+
+mostrarClientes();
+
+
+function excluirCliente(indice) {
+
+    clientes.splice(indice, 1);
+
+    localStorage.setItem("clientes", JSON.stringify(clientes));
+
+    mostrarClientes();
+}
+
+botao.addEventListener("click", function() {
+
+    // Verifica se algum campo esta vazio
+    if (nome.value === "" || email.value === "" || telefone.value === "") {
+        alert("Preencha todos os campos!");
+        return;
+}
+
+
+    if (isNaN(telefone.value)) {
+    alert("Digite apenas números no telefone!");
+    return;
+}
+
+ if (!email.value.includes("@") || !email.value.includes(".")) {
+    alert("Digite um e-mail válido!");
+    return;
+}
+
+    // Cria um cliente
+    const cliente = {
+        nome: nome.value,
+        email: email.value,
+        telefone: telefone.value
+    };
+
+    // Adiciona o cliente na lista
+    if (indiceEditando === null) {
+
+    clientes.push(cliente);
+
+} else {
+
+    clientes[indiceEditando] = cliente;
+
+    indiceEditando = null;
+
+    botao.textContent = "Cadastrar";
+}
+
+    // Salva a lista no navegador
+    localStorage.setItem("clientes", JSON.stringify(clientes));
+
+   mostrarClientes();
+
+    // Limpa os campos
+    nome.value = "";
+    email.value = "";
+    telefone.value = "";
+
+});
+
+pesquisa.addEventListener("input", function() {
+
+    const texto = pesquisa.value.toLowerCase();
+
+    const cards = document.querySelectorAll(".cliente-card");
+
+    let encontrados = 0;
+
+    cards.forEach(function(card) {
+
+        const nomeCliente = card.textContent.toLowerCase();
+
+        if (nomeCliente.includes(texto)) {
+            card.style.display = "block";
+            encontrados++;
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+    if (encontrados === 0 && texto !== "") {
+        mensagemPesquisa.textContent = "Nenhum cliente encontrado.";
+    } else {
+        mensagemPesquisa.textContent = "";
+    }
+
+});
+
+
+
+
