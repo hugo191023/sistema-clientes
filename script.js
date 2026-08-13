@@ -56,6 +56,10 @@ function editarCliente(indice) {
     indiceEditando = indice;
 
     botao.textContent = "Salvar alteração";
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+});
 
 }
 
