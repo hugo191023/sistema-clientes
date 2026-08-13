@@ -177,10 +177,6 @@ input:focus {
     color: #15803d;
     font-size: 14px;
     font-weight: 600;
-    display: inline-block;
-}
-
-#mensagemSucesso:empty {
     display: none;
 }
 
