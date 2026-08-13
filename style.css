@@ -169,6 +169,17 @@ input:focus {
     background: var(--primary-dark);
 }
 
+#mensagemSucesso {
+    margin-top: 14px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: #ecfdf3;
+    color: #15803d;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+}
+
 .campo-pesquisa {
     display: flex;
     align-items: center;
