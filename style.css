@@ -264,8 +264,8 @@ input:focus {
     width: 52px;
     height: 52px;
     border-radius: 50%;
-    background: #eef4ff;
-    color: #2563eb;
+    background: #2563eb;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
