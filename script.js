@@ -21,16 +21,28 @@ function mostrarClientes() {
 
     clientes.forEach(function(cliente, indice) {
 
-        listaClientes.innerHTML +=
-            '<div class="cliente-card">' +
-                '<p><strong>Nome:</strong> ' + cliente.nome + '</p>' +
-                '<p><strong>E-mail:</strong> ' + cliente.email + '</p>' +
-                '<p><strong>Telefone:</strong> ' + cliente.telefone + '</p>' +
-                '<div class="acoes">' +
-                    '<button onclick="editarCliente(' + indice + ')">Editar</button>' +
-                    '<button onclick="excluirCliente(' + indice + ')">Excluir</button>' +
-                '</div>' +
-            '</div>';
+       const iniciais = cliente.nome
+    .split(" ")
+    .map(parte => parte.charAt(0))
+    .join("")
+    .substring(0, 2)
+    .toUpperCase();
+
+listaClientes.innerHTML +=
+    '<div class="cliente-card">' +
+        '<div class="cliente-topo">' +
+            '<div class="cliente-avatar">' + iniciais + '</div>' +
+            '<div class="cliente-info">' +
+                '<h3>' + cliente.nome + '</h3>' +
+                '<p>' + cliente.email + '</p>' +
+                '<p>' + cliente.telefone + '</p>' +
+            '</div>' +
+        '</div>' +
+        '<div class="acoes">' +
+            '<button onclick="editarCliente(' + indice + ')">Editar</button>' +
+            '<button onclick="excluirCliente(' + indice + ')">Excluir</button>' +
+        '</div>' +
+    '</div>';
 
     });
 }
