@@ -180,6 +180,10 @@ input:focus {
     display: inline-block;
 }
 
+#mensagemSucesso:empty {
+    display: none;
+}
+
 #mensagemExclusao {
     margin-top: 14px;
     padding: 10px 14px;
