@@ -237,11 +237,13 @@ input:focus {
     margin: 12px 0 0;
     padding: 10px 14px;
     border-radius: 8px;
-    background-color: #fef3c7;
+    background-color: #fff3cd;
+    border: 1px solid #ffe69c;
     color: #92400e;
     font-size: 14px;
     font-weight: 600;
-    display: inline-block;
+    display: block;
+    width: fit-content;
 }
 
 #mensagemPesquisa:empty {
