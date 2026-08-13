@@ -245,11 +245,45 @@ input:focus {
     border: 1px solid var(--border);
     border-radius: 14px;
     padding: 20px;
-    background: #fafafa;
+    background: #ffffff;
+    transition: 0.2s;
 }
 
-.cliente-card p {
-    margin: 5px 0;
+.cliente-card:hover {
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    transform: translateY(-2px);
+}
+
+.cliente-topo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.cliente-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #eef4ff;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.cliente-info h3 {
+    margin: 0 0 6px;
+    font-size: 18px;
+    color: #111827;
+}
+
+.cliente-info p {
+    margin: 3px 0;
+    color: #64748b;
+    font-size: 14px;
 }
 
 .acoes {
