@@ -36,13 +36,13 @@ listaClientes.innerHTML +=
                 '<h3>' + cliente.nome + '</h3>' +
                 '<p>' + cliente.email + '</p>' +
                 '<p>' + cliente.telefone + '</p>' +
+           '</div>' +
+           '<div class="acoes">' +
+                '<button onclick="editarCliente(' + indice + ')">Editar</button>' +
+                '<button onclick="excluirCliente(' + indice + ')">Excluir</button>' +
             '</div>' +
-        '</div>' +
-        '<div class="acoes">' +
-            '<button onclick="editarCliente(' + indice + ')">Editar</button>' +
-            '<button onclick="excluirCliente(' + indice + ')">Excluir</button>' +
-        '</div>' +
-    '</div>';
+            '</div>' +
+            '</div>';
 
     });
 }
