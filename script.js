@@ -3,6 +3,7 @@
 const nome = document.getElementById("nome");
 const email = document.getElementById("email");
 const mensagemSucesso = document.getElementById("mensagemSucesso");
+const mensagemErro = document.getElementById("mensagemErro");
 const mensagemExclusao = document.getElementById("mensagemExclusao");
 const telefone = document.getElementById("telefone");
 const botao = document.getElementById("botao");
@@ -95,21 +96,25 @@ botao.addEventListener("click", function() {
 
     // Verifica se algum campo esta vazio
     if (nome.value === "" || email.value === "" || telefone.value === "") {
-        alert("Preencha todos os campos!");
+        mensagemErro.textContent = "⚠ Preencha todos os campos!";
+        mensagemErro.style.display = "inline-block";
         return;
 }
 
 
     if (isNaN(telefone.value)) {
-    alert("Digite apenas números no telefone!");
+    mensagemErro.textContent = "⚠ Digite apenas números no telefone!";
+    mensagemErro.style.display = "inline-block";
     return;
 }
 
  if (!email.value.includes("@") || !email.value.includes(".")) {
-    alert("Digite um e-mail válido!");
+    mensagemErro.textContent = "⚠ Digite um e-mail válido!";
+    mensagemErro.style.display = "inline-block";
     return;
 }
-
+    mensagemErro.textContent = "";
+    mensagemErro.style.display = "none";
     // Cria um cliente
     const cliente = {
         nome: nome.value,
