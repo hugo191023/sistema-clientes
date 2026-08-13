@@ -2,6 +2,7 @@
 
 const nome = document.getElementById("nome");
 const email = document.getElementById("email");
+const mensagemSucesso = document.getElementById("mensagemSucesso");
 const telefone = document.getElementById("telefone");
 const botao = document.getElementById("botao");
 const listaClientes = document.getElementById("listaClientes");
