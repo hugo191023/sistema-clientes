@@ -77,9 +77,16 @@ if (!confirmar) {
 
     clientes.splice(indice, 1);
 
-    localStorage.setItem("clientes", JSON.stringify(clientes));
+     localStorage.setItem("clientes", JSON.stringify(clientes));
 
     mostrarClientes();
+    
+    mensagemExclusao.textContent = "✓ Cliente excluído com sucesso!";
+
+    setTimeout(() => {
+    mensagemExclusao.textContent = "";
+}, 3000);
+
 }
 
 botao.addEventListener("click", function() {
