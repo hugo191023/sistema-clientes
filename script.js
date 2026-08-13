@@ -125,6 +125,12 @@ botao.addEventListener("click", function() {
     nome.value = "";
     email.value = "";
     telefone.value = "";
+    
+    mensagemSucesso.textContent = "✓ Cliente salvo com sucesso!";
+
+setTimeout(() => {
+    mensagemSucesso.textContent = "";
+}, 3000);
 
 });
 
