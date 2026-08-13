@@ -188,7 +188,7 @@ input:focus {
     color: #b91c1c;
     font-size: 14px;
     font-weight: 600;
-    display: inline-block;
+    display: none;
 }
 
 .campo-pesquisa {
