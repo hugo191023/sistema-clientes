@@ -247,6 +247,8 @@ input:focus {
     padding: 20px;
     background: #ffffff;
     transition: 0.2s;
+    display: flex;
+    align-items: center;
 }
 
 .cliente-card:hover {
