@@ -82,9 +82,11 @@ if (!confirmar) {
     mostrarClientes();
     
     mensagemExclusao.textContent = "✓ Cliente excluído com sucesso!";
+    mensagemExclusao.style.display = "inline-block";
 
     setTimeout(() => {
     mensagemExclusao.textContent = "";
+    mensagemExclusao.style.display = "none";
 }, 3000);
 
 }
