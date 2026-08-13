@@ -186,6 +186,7 @@ input:focus {
     display: inline-block;
     position: relative;
     flex-shrink: 0;
+    margin-left: 4px;
 }
 
 .icone-pesquisa::after {
