@@ -178,6 +178,27 @@ input:focus {
     padding: 0 14px;
     background: #fff;
 }
+.icone-pesquisa {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #64748b;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.icone-pesquisa::after {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 2px;
+    background: #64748b;
+    right: -6px;
+    bottom: -3px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+}
 
 .campo-pesquisa input {
     border: none;
