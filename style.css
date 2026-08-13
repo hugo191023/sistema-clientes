@@ -190,6 +190,16 @@ input:focus {
     font-weight: 600;
     display: none;
 }
+#mensagemErro {
+    margin-top: 14px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background-color: #fff3cd;
+    color: #92400e;
+    font-size: 14px;
+    font-weight: 600;
+    display: none;
+}
 
 .campo-pesquisa {
     display: flex;
