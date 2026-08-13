@@ -118,13 +118,17 @@ botao.addEventListener("click", function() {
     };
 
     // Adiciona o cliente na lista
+    let mensagemOperacao = "";
+    
     if (indiceEditando === null) {
 
     clientes.push(cliente);
+    mensagemOperacao = "✓ Cliente cadastrado com sucesso!";
 
 } else {
 
     clientes[indiceEditando] = cliente;
+    mensagemOperacao = "✓ Cliente atualizado com sucesso!";
 
     indiceEditando = null;
 
@@ -141,7 +145,7 @@ botao.addEventListener("click", function() {
     email.value = "";
     telefone.value = "";
     
-    mensagemSucesso.textContent = "✓ Cliente salvo com sucesso!";
+    mensagemSucesso.textContent = mensagemOperacao;
     mensagemSucesso.style.display = "inline-block";
 
 setTimeout(() => {
