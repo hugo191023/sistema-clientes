@@ -1,43 +1,128 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Sistema de Clientes</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
 
-  <div class="container">
+    <main class="container">
 
-    <h1>Sistema de Clientes</h1>
+        <header class="cabecalho">
+            <div>
+                <span class="etiqueta">GESTÃO DE CLIENTES</span>
+                <h1>Sistema de Clientes</h1>
+                <p>Cadastre, gerencie e encontre seus clientes de forma simples.</p>
+            </div>
 
-    <p>Nome:</p>
-    <input type="text" id="nome">
+            <div class="icone-cabecalho">👥</div>
+        </header>
 
-    <p>E-mail:</p>
-    <input type="text" id="email">
+        <section class="secao">
 
-    <p>Telefone:</p>
-    <input type="text" id="telefone">
+            <div class="titulo-secao">
+                <div>
+                    <span class="numero-secao">01</span>
+                    <h2>Novo cliente</h2>
+                </div>
 
-    <br><br>
+                <p>Preencha os dados abaixo para realizar um novo cadastro.</p>
+            </div>
 
-    <button id="botao">Cadastrar</button>
+            <div class="formulario">
 
-    <p>Pesquisar cliente:</p>
-    <input type="text" id="pesquisa" placeholder="Digite o nome do cliente">
+                <div class="campo campo-nome">
+                    <label for="nome">Nome completo</label>
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Ex.: João da Silva"
+                    >
+                </div>
 
-    <p id="mensagemPesquisa"></p>
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input
+                        type="text"
+                        id="email"
+                        placeholder="cliente@email.com"
+                    >
+                </div>
 
-    <h2>Clientes cadastrados (<span id="contador">0</span>)</h2>
+                <div class="campo">
+                    <label for="telefone">Telefone</label>
+                    <input
+                        type="text"
+                        id="telefone"
+                        placeholder="(61) 99999-9999"
+                    >
+                </div>
 
-    <div id="listaClientes"></div>
+            </div>
 
-</div>
+            <button id="botao">
+                + Cadastrar cliente
+            </button>
 
-    <script src="./script.js"></script>
+        </section>
+
+        <section class="secao">
+
+            <div class="titulo-secao">
+                <div>
+                    <span class="numero-secao">02</span>
+                    <h2>Pesquisar clientes</h2>
+                </div>
+            </div>
+
+            <div class="campo-pesquisa">
+                <span>🔎</span>
+
+                <input
+                    type="text"
+                    id="pesquisa"
+                    placeholder="Digite o nome do cliente"
+                >
+            </div>
+
+            <p id="mensagemPesquisa"></p>
+
+        </section>
+
+        <section class="secao lista-secao">
+
+            <div class="cabecalho-clientes">
+
+                <div>
+                    <span class="numero-secao">03</span>
+                    <h2>Clientes cadastrados</h2>
+                </div>
+
+                <div class="contador">
+                    <span id="contador">0</span>
+                    <small>clientes</small>
+                </div>
+
+            </div>
+
+            <div id="listaClientes"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        Sistema de Clientes • Desenvolvido por Hugo de Souza Camargo
+    </footer>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
