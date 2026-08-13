@@ -140,9 +140,11 @@ botao.addEventListener("click", function() {
     telefone.value = "";
     
     mensagemSucesso.textContent = "✓ Cliente salvo com sucesso!";
+    mensagemSucesso.style.display = "inline-block";
 
 setTimeout(() => {
     mensagemSucesso.textContent = "";
+    mensagemSucesso.style.display = "none";
 }, 3000);
 
 });
