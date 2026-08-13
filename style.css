@@ -180,6 +180,17 @@ input:focus {
     display: inline-block;
 }
 
+#mensagemExclusao {
+    margin-top: 14px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background-color: #fee2e2;
+    color: #b91c1c;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+}
+
 .campo-pesquisa {
     display: flex;
     align-items: center;
