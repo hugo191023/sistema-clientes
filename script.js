@@ -68,6 +68,11 @@ mostrarClientes();
 
 
 function excluirCliente(indice) {
+    const confirmar = confirm("Tem certeza que deseja excluir este cliente?");
+
+if (!confirmar) {
+    return;
+}
 
     clientes.splice(indice, 1);
 
