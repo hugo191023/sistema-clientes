@@ -21,6 +21,7 @@ const editarEmail = document.getElementById("editarEmail");
 const editarTelefone = document.getElementById("editarTelefone");
 const cancelarEdicao = document.getElementById("cancelarEdicao");
 const salvarEdicao = document.getElementById("salvarEdicao");
+const mensagemErroEdicao = document.getElementById("mensagemErroEdicao");
 
 let clientes = JSON.parse(localStorage.getItem("clientes")) || [];
 
