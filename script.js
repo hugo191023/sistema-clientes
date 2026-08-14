@@ -189,9 +189,9 @@ pesquisa.addEventListener("input", function() {
 
     cards.forEach(function(card) {
 
-        const nomeCliente = card.textContent.toLowerCase();
+       const dadosCliente = card.textContent.toLowerCase();
 
-        if (nomeCliente.includes(texto)) {
+       if (dadosCliente.includes(texto)) {
             card.style.display = "block";
             encontrados++;
         } else {
