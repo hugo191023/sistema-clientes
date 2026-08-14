@@ -281,6 +281,15 @@ if (telefoneEdicaoNumeros.length !== 11) {
     mensagemErroEdicao.textContent = "⚠ Digite um e-mail válido!";
     return;
 }
+    const emailEdicaoDuplicado = clientes.some(function(cliente, indice) {
+    return cliente.email.toLowerCase() === editarEmail.value.toLowerCase()
+        && indice !== indiceEditando;
+});
+
+if (emailEdicaoDuplicado) {
+    mensagemErroEdicao.textContent = "⚠ Este e-mail já está cadastrado!";
+    return;
+}
 
     clientes[indiceEditando].nome = editarNome.value;
     clientes[indiceEditando].email = editarEmail.value;
