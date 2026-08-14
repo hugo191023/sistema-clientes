@@ -11,10 +11,15 @@ const listaClientes = document.getElementById("listaClientes");
 const pesquisa = document.getElementById("pesquisa");
 const contador = document.getElementById("contador");
 const mensagemPesquisa = document.getElementById("mensagemPesquisa");
+const modalExclusao = document.getElementById("modalExclusao");
+const textoModal = document.getElementById("textoModal");
+const cancelarExclusao = document.getElementById("cancelarExclusao");
+const confirmarExclusao = document.getElementById("confirmarExclusao");
 
 let clientes = JSON.parse(localStorage.getItem("clientes")) || [];
 
 let indiceEditando = null;
+let indiceParaExcluir = null;
 
 function mostrarClientes() {
 
@@ -70,28 +75,12 @@ mostrarClientes();
 
 
 function excluirCliente(indice) {
-   const confirmar = confirm(`Tem certeza que deseja excluir ${clientes[indice].nome}?`);
+    indiceParaExcluir = indice;
 
-if (!confirmar) {
-    return;
+    textoModal.textContent = `Tem certeza que deseja excluir ${clientes[indice].nome}?`;
+
+    modalExclusao.style.display = "flex";
 }
-
-    clientes.splice(indice, 1);
-
-     localStorage.setItem("clientes", JSON.stringify(clientes));
-
-    mostrarClientes();
-    
-    mensagemExclusao.textContent = "✓ Cliente excluído com sucesso!";
-    mensagemExclusao.style.display = "inline-block";
-
-    setTimeout(() => {
-    mensagemExclusao.textContent = "";
-    mensagemExclusao.style.display = "none";
-}, 3000);
-
-}
-
 botao.addEventListener("click", function() {
 
     // Verifica se algum campo esta vazio
