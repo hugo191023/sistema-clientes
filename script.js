@@ -310,5 +310,18 @@ if (emailEdicaoDuplicado) {
         mensagemSucesso.style.display = "none";
     }, 3000);
 });
+editarTelefone.addEventListener("input", function () {
+    let numero = editarTelefone.value.replace(/\D/g, "");
 
+    numero = numero.slice(0, 11);
+
+    if (numero.length > 10) {
+        numero = numero.replace(
+            /(\d{2})(\d{5})(\d{4})/,
+            "($1) $2-$3"
+        );
+    }
+
+    editarTelefone.value = numero;
+});
 
