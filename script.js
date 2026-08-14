@@ -10,6 +10,7 @@ const botao = document.getElementById("botao");
 const listaClientes = document.getElementById("listaClientes");
 const pesquisa = document.getElementById("pesquisa");
 const contador = document.getElementById("contador");
+const textoContador = contador.nextElementSibling;
 const mensagemPesquisa = document.getElementById("mensagemPesquisa");
 const modalExclusao = document.getElementById("modalExclusao");
 const textoModal = document.getElementById("textoModal");
