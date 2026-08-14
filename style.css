@@ -454,3 +454,25 @@ footer {
     background: #dc2626;
     color: white;
 }
+#cancelarEdicao,
+#salvarEdicao {
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#cancelarEdicao {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+#salvarEdicao {
+    background: var(--primary);
+    color: white;
+}
+
+#salvarEdicao:hover {
+    background: var(--primary-dark);
+}
