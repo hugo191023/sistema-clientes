@@ -216,7 +216,10 @@ telefone.addEventListener("input", function () {
 
     telefone.value = numero;
 });
-
+cancelarExclusao.addEventListener("click", function() {
+    modalExclusao.style.display = "none";
+    indiceParaExcluir = null;
+});
 
 
 
