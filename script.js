@@ -274,6 +274,13 @@ if (telefoneEdicaoNumeros.length !== 11) {
     mensagemErroEdicao.textContent = "⚠ Digite um telefone válido com 11 números!";
     return;
 }
+    if (
+    !editarEmail.value.includes("@") ||
+    !editarEmail.value.includes(".")
+) {
+    mensagemErroEdicao.textContent = "⚠ Digite um e-mail válido!";
+    return;
+}
 
     clientes[indiceEditando].nome = editarNome.value;
     clientes[indiceEditando].email = editarEmail.value;
