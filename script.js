@@ -254,8 +254,8 @@ salvarEdicao.addEventListener("click", function() {
     if (indiceEditando === null) {
         return;
     }
-    if (
-    editarNome.value.trim() === "" ||
+    
+   if ( editarNome.value.trim() === "" ||
     editarEmail.value.trim() === "" ||
     editarTelefone.value.trim() === ""
 ) {
@@ -266,6 +266,12 @@ salvarEdicao.addEventListener("click", function() {
 
 if (!nomeEdicaoValido || editarNome.value.trim().length < 3) {
     mensagemErroEdicao.textContent = "⚠ Digite um nome válido!";
+    return;
+}
+    const telefoneEdicaoNumeros = editarTelefone.value.replace(/\D/g, "");
+
+if (telefoneEdicaoNumeros.length !== 11) {
+    mensagemErroEdicao.textContent = "⚠ Digite um telefone válido com 11 números!";
     return;
 }
 
