@@ -136,9 +136,14 @@ if (emailDuplicado) {
     
     // Cria um cliente
     const cliente = {
-        nome: nome.value,
-        email: email.value,
-        telefone: telefone.value
+        nome: nome.value
+        .trim()
+        .toLowerCase()
+        .split(" ")
+        .map(parte => parte.charAt(0).toUpperCase() + parte.slice(1))
+        .join(" "),
+    email: email.value,
+    telefone: telefone.value
     };
 
     // Adiciona o cliente na lista
