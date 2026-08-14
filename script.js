@@ -248,6 +248,30 @@ cancelarEdicao.addEventListener("click", function() {
     modalEdicao.style.display = "none";
     indiceEditando = null;
 });
+salvarEdicao.addEventListener("click", function() {
 
+    if (indiceEditando === null) {
+        return;
+    }
+
+    clientes[indiceEditando].nome = editarNome.value;
+    clientes[indiceEditando].email = editarEmail.value;
+    clientes[indiceEditando].telefone = editarTelefone.value;
+
+    localStorage.setItem("clientes", JSON.stringify(clientes));
+
+    mostrarClientes();
+
+    modalEdicao.style.display = "none";
+    indiceEditando = null;
+
+    mensagemSucesso.textContent = "✓ Cliente atualizado com sucesso!";
+    mensagemSucesso.style.display = "inline-block";
+
+    setTimeout(() => {
+        mensagemSucesso.textContent = "";
+        mensagemSucesso.style.display = "none";
+    }, 3000);
+});
 
 
