@@ -115,8 +115,19 @@ if (numeroTelefone.length !== 11) {
     mensagemErro.style.display = "inline-block";
     return;
 }
+    const emailDuplicado = clientes.some(function(cliente, indice) {
+        return cliente.email.toLowerCase() === email.value.toLowerCase()
+            && indice !== indiceEditando;
+});
+
+if (emailDuplicado) {
+    mensagemErro.textContent = "⚠ Este e-mail já está cadastrado!";
+    mensagemErro.style.display = "inline-block";
+    return;
+}
     mensagemErro.textContent = "";
     mensagemErro.style.display = "none";
+    
     // Cria um cliente
     const cliente = {
         nome: nome.value,
