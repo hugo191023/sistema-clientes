@@ -220,6 +220,29 @@ cancelarExclusao.addEventListener("click", function() {
     modalExclusao.style.display = "none";
     indiceParaExcluir = null;
 });
+confirmarExclusao.addEventListener("click", function() {
+
+    if (indiceParaExcluir === null) {
+        return;
+    }
+
+    clientes.splice(indiceParaExcluir, 1);
+
+    localStorage.setItem("clientes", JSON.stringify(clientes));
+
+    mostrarClientes();
+
+    modalExclusao.style.display = "none";
+    indiceParaExcluir = null;
+
+    mensagemExclusao.textContent = "✓ Cliente excluído com sucesso!";
+    mensagemExclusao.style.display = "inline-block";
+
+    setTimeout(() => {
+        mensagemExclusao.textContent = "";
+        mensagemExclusao.style.display = "none";
+    }, 3000);
+});
 
 
 
