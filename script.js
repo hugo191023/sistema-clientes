@@ -244,6 +244,10 @@ confirmarExclusao.addEventListener("click", function() {
         mensagemExclusao.style.display = "none";
     }, 3000);
 });
+cancelarEdicao.addEventListener("click", function() {
+    modalEdicao.style.display = "none";
+    indiceEditando = null;
+});
 
 
 
