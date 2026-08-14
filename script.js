@@ -102,8 +102,10 @@ botao.addEventListener("click", function() {
 }
 
 
-    if (isNaN(telefone.value)) {
-    mensagemErro.textContent = "⚠ Digite apenas números no telefone!";
+  const numeroTelefone = telefone.value.replace(/\D/g, "");
+
+if (numeroTelefone.length !== 11) {
+    mensagemErro.textContent = "⚠ Digite um telefone válido com 11 números!";
     mensagemErro.style.display = "inline-block";
     return;
 }
@@ -187,6 +189,21 @@ pesquisa.addEventListener("input", function() {
         mensagemPesquisa.textContent = "";
     }
 
+});
+telefone.addEventListener("input", function () {
+
+    let numero = telefone.value.replace(/\D/g, "");
+
+    numero = numero.slice(0, 11);
+
+    if (numero.length > 10) {
+        numero = numero.replace(
+            /(\d{2})(\d{5})(\d{4})/,
+            "($1) $2-$3"
+        );
+    }
+
+    telefone.value = numero;
 });
 
 
