@@ -199,6 +199,8 @@ pesquisa.addEventListener("input", function() {
         }
 
     });
+    
+    contador.textContent = texto === "" ? clientes.length : encontrados;
 
     if (encontrados === 0 && texto !== "") {
         mensagemPesquisa.textContent = "Nenhum cliente encontrado.";
