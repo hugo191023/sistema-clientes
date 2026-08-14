@@ -100,7 +100,13 @@ botao.addEventListener("click", function() {
         mensagemErro.style.display = "inline-block";
         return;
 }
+const nomeValido = /^[A-Za-zÀ-ÿ\s]+$/.test(nome.value.trim());
 
+if (!nomeValido || nome.value.trim().length < 3) {
+    mensagemErro.textContent = "⚠ Digite um nome válido!";
+    mensagemErro.style.display = "inline-block";
+    return;
+}
 
   const numeroTelefone = telefone.value.replace(/\D/g, "");
 
