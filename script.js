@@ -262,6 +262,12 @@ salvarEdicao.addEventListener("click", function() {
     mensagemErroEdicao.textContent = "⚠ Preencha todos os campos!";
     return;
 }
+    const nomeEdicaoValido = /^[A-Za-zÀ-ÿ\s]+$/.test(editarNome.value.trim());
+
+if (!nomeEdicaoValido || editarNome.value.trim().length < 3) {
+    mensagemErroEdicao.textContent = "⚠ Digite um nome válido!";
+    return;
+}
 
     clientes[indiceEditando].nome = editarNome.value;
     clientes[indiceEditando].email = editarEmail.value;
