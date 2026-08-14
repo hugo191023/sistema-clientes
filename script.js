@@ -70,7 +70,7 @@ mostrarClientes();
 
 
 function excluirCliente(indice) {
-    const confirmar = confirm("Tem certeza que deseja excluir este cliente?");
+   const confirmar = confirm(`Tem certeza que deseja excluir ${clientes[indice].nome}?`);
 
 if (!confirmar) {
     return;
