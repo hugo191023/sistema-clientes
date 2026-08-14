@@ -15,6 +15,12 @@ const modalExclusao = document.getElementById("modalExclusao");
 const textoModal = document.getElementById("textoModal");
 const cancelarExclusao = document.getElementById("cancelarExclusao");
 const confirmarExclusao = document.getElementById("confirmarExclusao");
+const modalEdicao = document.getElementById("modalEdicao");
+const editarNome = document.getElementById("editarNome");
+const editarEmail = document.getElementById("editarEmail");
+const editarTelefone = document.getElementById("editarTelefone");
+const cancelarEdicao = document.getElementById("cancelarEdicao");
+const salvarEdicao = document.getElementById("salvarEdicao");
 
 let clientes = JSON.parse(localStorage.getItem("clientes")) || [];
 
@@ -57,18 +63,13 @@ listaClientes.innerHTML +=
 
 function editarCliente(indice) {
 
-    nome.value = clientes[indice].nome;
-    email.value = clientes[indice].email;
-    telefone.value = clientes[indice].telefone;
-
     indiceEditando = indice;
 
-    botao.textContent = "Salvar alteração";
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-});
+    editarNome.value = clientes[indice].nome;
+    editarEmail.value = clientes[indice].email;
+    editarTelefone.value = clientes[indice].telefone;
 
+    modalEdicao.style.display = "flex";
 }
 
 mostrarClientes();
