@@ -254,6 +254,14 @@ salvarEdicao.addEventListener("click", function() {
     if (indiceEditando === null) {
         return;
     }
+    if (
+    editarNome.value.trim() === "" ||
+    editarEmail.value.trim() === "" ||
+    editarTelefone.value.trim() === ""
+) {
+    mensagemErroEdicao.textContent = "⚠ Preencha todos os campos!";
+    return;
+}
 
     clientes[indiceEditando].nome = editarNome.value;
     clientes[indiceEditando].email = editarEmail.value;
