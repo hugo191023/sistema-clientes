@@ -31,6 +31,10 @@ let indiceParaExcluir = null;
 function mostrarClientes() {
 
     listaClientes.innerHTML = "";
+    
+    clientes.sort(function(a, b) {
+    return a.nome.localeCompare(b.nome);
+});
 
     contador.textContent = clientes.length;
 
