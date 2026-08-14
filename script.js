@@ -202,6 +202,7 @@ pesquisa.addEventListener("input", function() {
     });
     
     contador.textContent = texto === "" ? clientes.length : encontrados;
+    textoContador.textContent = contador.textContent === "1" ? "cliente" : "clientes";
 
     if (encontrados === 0 && texto !== "") {
         mensagemPesquisa.textContent = "Nenhum cliente encontrado.";
